@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: quant-platform-os-v2
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: TRADING_MODE
+        value: SHADOW
+      - key: ALLOW_LIVE_TRADING
+        value: "false"
+      - key: SHADOW_INTERVAL_SECONDS
+        value: "60"
+      - key: AGENT_COUNT
+        value: "100"
+      - key: PUBLIC_MARKET_EXCHANGES
+        value: binance,kraken,coinbase
+      - key: COINBASE_MAX_PRODUCTS
+        value: "40"

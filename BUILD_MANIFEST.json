@@ -1,0 +1,42 @@
+{
+  "name": "Quant Platform OS",
+  "version": "1.3.4-hardened",
+  "status": "deployment-candidate",
+  "live_trading_default": false,
+  "baseline": "v1.2-execution-research",
+  "layers": [
+    "multi-agent-research",
+    "shadow",
+    "micro-window",
+    "divergence",
+    "risk",
+    "paper-execution",
+    "control-plane",
+    "postgres",
+    "redis",
+    "observability",
+    "android-terminal",
+    "deployment-preflight",
+    "whole-market-scanner",
+    "breakout-monitor-core",
+    "position-momentum-guard"
+  ],
+  "validation": {
+    "python_compile": true,
+    "live_deployment": false,
+    "docker_validation": "requires Docker host",
+    "safety_tests": "7 passed"
+  },
+  "work_copy_audit_date": "2026-10-21",
+  "automated_tests": {
+    "pytest": "10 passed",
+    "compileall": "passed"
+  },
+  "research_shadow_status": "implemented; public Binance feed; order submission disabled",
+  "live_trading_enabled": false,
+  "known_unverified": [
+    "Docker build/startup unavailable in build environment",
+    "external Binance connectivity not verified by automated tests",
+    "short-window candle breakout and evolutionary learning not implemented"
+  ]
+}
