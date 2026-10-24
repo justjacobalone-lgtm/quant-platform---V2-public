@@ -1,0 +1,13 @@
+groups:
+  - name: quant-platform
+    rules:
+      - alert: QuantApiDown
+        expr: up{job="quant-api"} == 0
+        for: 2m
+        labels:
+          severity: critical
+      - alert: QuantLiveMode
+        expr: quant_trading_mode_live == 1
+        for: 1m
+        labels:
+          severity: warning
